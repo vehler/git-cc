@@ -1,0 +1,10 @@
+#!/bin/sh
+
+current_branch=$(git symbolic-ref --short -q HEAD)
+
+git checkout master && git pull
+git checkout stage && git pull
+
+if [ $current_branch != 'stage' ]; then
+    git checkout $current_branch
+fi
