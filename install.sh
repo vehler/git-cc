@@ -1,7 +1,7 @@
 #!/bin/sh
 
-
 echo "- Let's setup the scripts"
+
 for file in *; do
   if [[ "$file" != *.md ]] && [[ "$file" != *.sh ]]; then
     chmod +x "$file"
