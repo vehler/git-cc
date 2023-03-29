@@ -2,9 +2,22 @@
 
 current_branch=$(git symbolic-ref --short -q HEAD)
 
-git checkout master && git pull
-git checkout stage && git pull
+if git branch | grep -wq "main"; then
+    git checkout main && git pull
+fi
 
-if [ $current_branch != 'stage' ]; then
+if git branch | grep -wq "develop"; then
+    git checkout develop && git pull
+fi
+
+if git branch | grep -wq "master"; then
+    git checkout master && git pull
+fi
+
+if git branch | grep -wq "stage"; then
+    git checkout stage && git pull
+fi
+
+if [ $current_branch != 'master' ] && [ $current_branch != 'stage' ]; then
     git checkout $current_branch
 fi

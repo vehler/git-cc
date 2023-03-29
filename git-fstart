@@ -1,0 +1,4 @@
+
+NAME=${1?Error: no name given}
+
+git flow feature start $NAME
