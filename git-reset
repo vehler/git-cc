@@ -18,6 +18,9 @@ if git branch | grep -wq "stage"; then
     git checkout stage && git pull
 fi
 
-if [ $current_branch != 'master' ] && [ $current_branch != 'stage' ]; then
+if  [ $current_branch != 'master' ] &&
+    [ $current_branch != 'stage' ] &&
+    [ $current_branch != 'main' ] &&
+    [ $current_branch != 'devlop' ]; then
     git del $current_branch
 fi
