@@ -2,4 +2,4 @@
 
 NAME=${1?Error: no name given}
 
-git flow feature finish $NAME
+git branch -D $NAME
