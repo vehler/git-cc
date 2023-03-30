@@ -2,5 +2,4 @@
 
 MESSAGE=${1?Error: no message given}
 
-git add .
-git commit -m $MESSAGE
+git commit -m --allow-empty $MESSAGE

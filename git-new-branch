@@ -1,3 +1,5 @@
+#!/bin/sh
+
 NAME=${1?Error: no name given}
 
 git checkout -b $NAME
