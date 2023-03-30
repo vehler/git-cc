@@ -18,11 +18,15 @@ if [ -f ~/.zshrc ]; then
 
     echo "- Found .zshrc file"
 
-    if grep -q \"$load_scripts\" ~/.zshrc; then
-        echo "- Scripts already loaded"
+    # Check if the directory is already in the PATH
+    if ! echo "$PATH" | grep -q "$current_dir"; then
+
+      echo "\n\n# Git Custom Commands" >> ~/.zshrc
+      echo $load_scripts >> ~/.zshrc
+
+      echo "- Added GIT Custom Commmads to PATH"
     else
-        echo "\n\n# Git Custom Commands" >> ~/.zshrc
-        echo $load_scripts >> ~/.zshrc
+      echo "- GIT Custom Commmads already in PATH"
     fi
 
     echo "- Re-loading .zshrc"
@@ -35,5 +39,8 @@ else
     touch ~/.zshrc
 
     echo load_scripts >> ~/.zshrc
+
+    echo "- Re-loading .zshrc"
+    source ~/.zshrc
 
 fi
