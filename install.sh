@@ -8,7 +8,6 @@ for file in *; do
   fi
 done
 
-
 current_dir=$PWD
 load_scripts="export PATH=\$PATH:$current_dir"
 
@@ -45,3 +44,5 @@ else
     source ~/.zshrc
 
 fi
+
+eco "- Done"
