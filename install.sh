@@ -24,13 +24,13 @@ if [ -f ~/.zshrc ]; then
       echo "\n\n# Git Custom Commands" >> ~/.zshrc
       echo $load_scripts >> ~/.zshrc
 
+      echo "- Re loading .zshrc"
+      source ~/.zshrc
+
       echo "- Added GIT Custom Commmads to PATH"
     else
       echo "- GIT Custom Commmads already in PATH"
     fi
-
-    echo "- Re-loading .zshrc"
-    source ~/.zshrc
 
 else
 
@@ -38,7 +38,8 @@ else
 
     touch ~/.zshrc
 
-    echo load_scripts >> ~/.zshrc
+    echo "\n\n# Git Custom Commands" >> ~/.zshrc
+    echo $load_scripts >> ~/.zshrc
 
     echo "- Re-loading .zshrc"
     source ~/.zshrc
