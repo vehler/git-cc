@@ -2,6 +2,8 @@
 
 current_branch=$(git symbolic-ref --short -q HEAD)
 
+git fetch --all
+
 if git branch | grep -wq "main"; then
     git checkout main && git pull
 fi
